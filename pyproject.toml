@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-healthcare-edge-fog-cloud"
+version = "0.1.0"
+description = "SIMULATION ONLY: edge/fog/cloud placement simulator for the AI + metaverse smart-healthcare applications of Chapter 9. Not a medical device."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary - research prototype" }
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7.4"]
+plot = ["matplotlib>=3.7"]
+
+[project.scripts]
+edgefog = "edgefog.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
